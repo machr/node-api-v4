@@ -1,5 +1,6 @@
 import { Router } from "express";
-
+import { body, oneOf, validationResult } from "express-validator"
+import { handleInputErrors } from "./modules/middleware";
 /* 
 router is a "sub-app". an Express app can multiple routers, 
 each with their own configs and rules.
@@ -15,7 +16,9 @@ router.get("/product", (req, res) => {
     res.status(200)
     res.json({ message: "Products!" })
 })
-router.put("/product/:id", () => { })
+router.put('/product/:id', body('name').isString(), handleInputErrors, (req, res) => {
+
+})
 router.post("/product", () => { })
 router.delete("/product/:id", () => { })
 router.get("/product/:id", () => { })

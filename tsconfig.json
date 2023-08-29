@@ -2,10 +2,14 @@
   "compilerOptions": {
     "sourceMap": true,
     "outDir": "dist",
-    "strict": true,
+    "strict": false,
     "lib": [
       "esnext"
     ],
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "typeRoots": [
+      "./node_modules/@types",
+      "./src/types"
+    ]
   }
 }
